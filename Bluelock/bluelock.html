@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BLUE LOCK // EGO</title>
+
+    <link rel="stylesheet" href="bluelock.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            BLUE<span>LOCK</span>
+        </div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#players">PLAYERS</a>
+            <a href="#rankings">RANKINGS</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-lines"></div>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                BLUE LOCK PROJECT // 11
+            </p>
+
+            <h1>
+                BECOME<br>
+                <span>THE EGOIST</span>
+            </h1>
+
+            <p class="hero-text">
+                Only one striker can become the world's greatest.
+                Discover the players fighting to reach the top.
+            </p>
+
+            <a href="#players" class="hero-button">
+                VIEW PLAYERS →
+            </a>
+
+        </div>
+
+        <div class="hero-number">
+            11
+        </div>
+
+    </section>
+
+
+    <!-- ================= PLAYERS ================= -->
+
+    <section id="players" class="players-section">
+
+        <div class="section-heading">
+
+            <div>
+                <p>BLUE LOCK PROJECT</p>
+                <h2>THE PLAYERS</h2>
+            </div>
+
+            <div class="player-count">
+                09 PLAYERS
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="playerSearch"
+                placeholder="SEARCH PLAYER..."
+                onkeyup="searchPlayers()"
+            >
+
+            <span>⌕</span>
+
+        </div>
+
+
+        <!-- PLAYER GRID -->
+
+        <div class="player-grid" id="playerGrid">
+
+
+            <!-- RIN -->
+
+            <div
+                class="player-card"
+                data-name="Rin Itoshi"
+                onclick="openPlayer('rin')"
+            >
+
+                <div class="player-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVqfrpni3fqIJG5eJzgF9kJ33QgrBs5mOWeDu93FY_1CmCjE28ezrzNIs&s=10" alt="Rin Itoshi">
+                    <div class="player-number">01</div>
+                    <div class="position">FW</div>
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #1</p>
+
+                    <h3>RIN ITOSHI</h3>
+
+                    <span>
+                        DESTROYER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAGI -->
+
+            <div
+                class="player-card"
+                data-name="Seishiro Nagi"
+                onclick="openPlayer('nagi')"
+            >
+
+                <div class="player-image">
+                    <img src="https://wallpapercave.com/wp/wp11825305.jpg" alt="Nagi" height="330">
+                    <div class="player-number">02</div>
+                    <div class="position">FW</div>
+                </div>
+
+                <div class="player-info">
+
+                    <p>OUT, BUT MAKING A COMEBACK</p>
+
+                    <h3>SEISHIRO NAGI</h3>
+
+                    <span>
+                        TRAP MASTER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BAROU -->
+
+            <div
+                class="player-card"
+                data-name="Shoei Barou"
+                onclick="openPlayer('barou')"
+            >
+
+                <div class="player-image barou">
+                    <img src="https://i.ytimg.com/vi/mZ89zwsk_Ok/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBgyONuL_fNkcq1gO4LHZ6izcg1vQ" height="330">
+                    <div class="player-number">
+                        03
+                    </div>
+
+                    <div class="position">
+                        FW
+                    </div>
+
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #4</p>
+
+                    <h3>SHOEI BAROU</h3>
+
+                    <span>
+                        KING
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ISAGI -->
+
+            <div
+                class="player-card"
+                data-name="Yoichi Isagi"
+                onclick="openPlayer('isagi')"
+            >
+
+                <div class="player-image isagi">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvk5ghNKWMKBUXryon9mKnVJAK7OtI63LzdV_6QB_Nw&s=10">
+                    <div class="player-number">
+                        04
+                    </div>
+
+                    <div class="position">
+                        FW
+                    </div>
+
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #1</p>
+
+                    <h3>YOICHI ISAGI</h3>
+
+                    <span>
+                        EGOIST
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BACHIRA -->
+
+            <div
+                class="player-card"
+                data-name="Meguru Bachira"
+                onclick="openPlayer('bachira')"
+            >
+
+                <div class="player-image bachira">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5jnZzn9aNFjT516u0UDdJGhOc-uMTzrlXLFf1_5jsdw&s=10" height="330">
+                    <div class="player-number">
+                        05
+                    </div>
+
+                    <div class="position">
+                        FW
+                    </div>
+
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #5</p>
+
+                    <h3>MEGURU BACHIRA</h3>
+
+                    <span>
+                        MONSTER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- REO -->
+
+            <div
+                class="player-card"
+                data-name="Reo Mikage"
+                onclick="openPlayer('reo')"
+            >
+                
+                <div class="player-image reo">
+                    <img src="https://images8.alphacoders.com/138/thumb-1920-1384108.png" height="330">
+                    <div class="player-number">
+                        06
+                    </div>
+
+                    <div class="position">
+                        MF
+                    </div>
+
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #7</p>
+
+                    <h3>REO MIKAGE</h3>
+
+                    <span>
+                        CHAMELEON
+                    </span>
+
+                </div>
+
+            </div>
+
+
+      <!-- AIKU -->
+
+<div
+    class="player-card"
+    data-name="Oliver Aiku"
+    onclick="openPlayer('aiku')"
+>
+
+    <div class="player-image aiku">
+        <img src="https://images4.alphacoders.com/138/thumb-1920-1385117.png" height="330">
+        <div class="player-number">
+            07
+        </div>
+
+        <div class="position">
+            DF
+        </div>
+
+    </div>
+
+    <div class="player-info">
+
+        <p>RANK #10</p>
+
+        <h3>OLIVER AIKU</h3>
+
+        <span>
+            IRON WALL
+        </span>
+
+    </div>
+
+</div>
+
+
+            <!-- CHIGIRI -->
+
+            <div
+                class="player-card"
+                data-name="Hyoma Chigiri"
+                onclick="openPlayer('chigiri')"
+            >
+
+                <div class="player-image chigiri">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiHdUVSATzBQPvKW4s4O7fVkSoyA_VyWEeCsUanEPC3A&s=10" height="330px">
+                    <div class="player-number">
+                        08
+                    </div>
+
+                    <div class="position">
+                        FW
+                    </div>
+
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #6</p>
+
+                    <h3>HYOMA CHIGIRI</h3>
+
+                    <span>
+                        SPEEDSTER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- KUNIGAMI -->
+
+            <div
+                class="player-card"
+                data-name="Rensuke Kunigami"
+                onclick="openPlayer('kunigami')"
+            >
+
+                <div class="player-image kunigami">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNO13uETxehXmQKZ0bRjLGDrdOd_sVXGS730tf2lMG4g&s=10" height="330">
+                    <div class="player-number">
+                        09
+                    </div>
+
+                    <div class="position">
+                        FW
+                    </div>
+
+                </div>
+
+                <div class="player-info">
+
+                    <p>RANK #8</p>
+
+                    <h3>RENSUKE KUNIGAMI</h3>
+
+                    <span>
+                        WILDCARD
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RANKINGS ================= -->
+
+    <section id="rankings" class="rankings-section">
+
+        <div class="section-heading">
+
+            <div>
+                <p>PLAYER POWER</p>
+                <h2>EGO RANKINGS</h2>
+            </div>
+
+        </div>
+
+
+        <div class="ranking-list">
+
+            <div class="ranking">
+                <strong>01</strong>
+                <span>RIN ITOSHI</span>
+                <small>FW</small>
+            </div>
+
+            <div class="ranking">
+                <strong>01</strong>
+                <span>YOICHI ISAGI</span>
+                <small>FW</small>
+            </div>
+
+            <div class="ranking">
+                <strong>03</strong>
+                <span>SHOEI BAROU</span>
+                <small>FW</small>
+            </div>
+
+            <div class="ranking">
+                <strong>04</strong>
+                <span>SEISHIRO NAGI</span>
+                <small>FW</small>
+            </div>
+
+            <div class="ranking">
+                <strong>05</strong>
+                <span>MEGURU BACHIRA</span>
+                <small>FW</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about-section">
+
+        <p>BLUE LOCK PROJECT</p>
+
+        <h2>
+            THERE IS NO<br>
+            <span>TEAMWORK.</span>
+        </h2>
+
+        <p class="about-text">
+            The Blue Lock project gathers talented young
+            footballers and pushes them beyond their limits.
+            The goal is simple: create the ultimate striker.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="logo">
+            BLUE<span>LOCK</span>
+        </div>
+
+        <p>
+            EGO IS THE KEY TO EVOLUTION.
+        </p>
+
+        <small>
+            BLUE LOCK FAN WEBSITE
+        </small>
+
+    </footer>
+
+
+    <!-- ================= PLAYER MODAL ================= -->
+
+    <div id="playerModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close"
+                onclick="closePlayer()"
+            >
+                ×
+            </button>
+
+            <div class="modal-top">
+
+                <p id="modalPosition">
+                    FW
+                </p>
+
+                <h2 id="modalName">
+                    RIN ITOSHI
+                </h2>
+
+                <span id="modalNickname">
+                    DESTROYER
+                </span>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div>
+                    <strong id="speed">
+                        94
+                    </strong>
+
+                    <span>
+                        SPEED
+                    </span>
+                </div>
+
+                <div>
+                    <strong id="shooting">
+                        95
+                    </strong>
+
+                    <span>
+                        SHOOT
+                    </span>
+                </div>
+
+                <div>
+                    <strong id="dribbling">
+                        93
+                    </strong>
+
+                    <span>
+                        DRIBBLE
+                    </span>
+                </div>
+
+                <div>
+                    <strong id="passing">
+                        90
+                    </strong>
+
+                    <span>
+                        PASS
+                    </span>
+                </div>
+
+            </div>
+
+
+            <p id="modalDescription" class="modal-description">
+                Player description.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="bluelock.js"></script>
+
+</body>
+</html>

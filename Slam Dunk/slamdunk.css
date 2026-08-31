@@ -1,0 +1,1290 @@
+/* =========================================
+   SLAM DUNK — SHOHOKU WEBSITE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(8, 8, 8, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #292929;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: Impact, Arial, sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #e30613;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    color: #888;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #e30613;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 10%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #080808 40%,
+            #250507
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 700px;
+}
+
+.eyebrow {
+    color: #e30613;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: clamp(80px, 13vw, 175px);
+
+    line-height: 0.78;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: #e30613;
+
+    text-shadow:
+        7px 7px 0 #690009;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    margin-top: 40px;
+
+    color: #888;
+
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 28px;
+
+    background: #e30613;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: white;
+    color: #e30613;
+    transform: translateY(-4px);
+}
+
+.hero-ball {
+    position: absolute;
+
+    right: 10%;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(-20deg);
+
+    font-size: clamp(150px, 22vw, 320px);
+
+    filter:
+        drop-shadow(
+            0 25px 30px
+            rgba(0, 0, 0, 0.7)
+        );
+
+    animation: basketballFloat 4s ease-in-out infinite;
+}
+
+@keyframes basketballFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(-50%)
+            rotate(-20deg);
+    }
+
+    50% {
+        transform:
+            translateY(-57%)
+            rotate(10deg);
+    }
+}
+
+
+/* =========================================
+   PLAYERS SECTION
+========================================= */
+
+.players-section {
+    padding: 110px 5%;
+
+    background: #111;
+}
+
+.section-heading {
+    max-width: 1200px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+}
+
+.section-heading p {
+    color: #e30613;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: 50px;
+
+    letter-spacing: 2px;
+}
+
+.player-count {
+    color: #555;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-container {
+    position: relative;
+
+    max-width: 500px;
+
+    margin: 0 auto 40px;
+}
+
+.search-container input {
+    width: 100%;
+
+    padding: 16px 45px 16px 18px;
+
+    background: #080808;
+
+    border: 1px solid #333;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.search-container input:focus {
+    border-color: #e30613;
+}
+
+.search-container span {
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #e30613;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   BASKETBALL COURT
+========================================= */
+
+.basketball-court {
+    position: relative;
+
+    width: 100%;
+    max-width: 1200px;
+
+    height: 1050px;
+
+    margin: 0 auto;
+
+    /*
+       IMPORTANT:
+       Visible allows the cards/modal
+       to extend without being cut off.
+    */
+    overflow: visible;
+
+    border: 6px solid #eee;
+
+    background:
+        linear-gradient(
+            90deg,
+            #96572f 0%,
+            #a7653a 50%,
+            #96572f 100%
+        );
+
+    box-shadow:
+        inset 0 0 100px
+        rgba(0, 0, 0, 0.35),
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+/* Wood floor */
+
+.basketball-court::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 90px,
+            rgba(60, 25, 10, 0.15) 91px,
+            transparent 92px
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   COURT MARKINGS
+========================================= */
+
+.center-line {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 100%;
+    height: 4px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    z-index: 1;
+}
+
+.center-circle {
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        4px solid
+        rgba(255, 255, 255, 0.65);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+.three-point-line {
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        4px solid
+        rgba(255, 255, 255, 0.4);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+.key-area {
+    position: absolute;
+
+    width: 330px;
+    height: 270px;
+
+    left: 50%;
+    top: 0;
+
+    transform:
+        translateX(-50%);
+
+    border:
+        4px solid
+        rgba(255, 255, 255, 0.65);
+
+    border-top: none;
+
+    z-index: 1;
+}
+
+.hoop {
+    position: absolute;
+
+    left: 50%;
+    top: 18px;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 55px;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   PLAYER CARDS
+========================================= */
+
+.player-card {
+    position: absolute;
+
+    width: 180px;
+
+    background: #121212;
+
+    border: 2px solid #333;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.player-card:hover {
+    border-color: #e30613;
+
+    box-shadow:
+        0 0 35px
+        rgba(227, 6, 19, 0.5);
+
+    z-index: 100;
+}
+
+
+/* =========================================
+   PLAYER IMAGE
+========================================= */
+
+.player-image {
+    position: relative;
+
+    width: 100%;
+    height: 165px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.player-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 45%,
+            rgba(0, 0, 0, 0.8)
+        );
+}
+
+
+/* Player backgrounds */
+
+.sakuragi {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #bd222c,
+            #270608 70%
+        );
+}
+
+.rukawa {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #1e477c,
+            #060b14 70%
+        );
+}
+
+.akagi {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #66251f,
+            #110606 70%
+        );
+}
+
+.mitsui {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #205479,
+            #05090d 70%
+        );
+}
+
+.miyagi {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #27677e,
+            #05090d 70%
+        );
+}
+
+
+/* =========================================
+   PLAYER NUMBER
+========================================= */
+
+.player-number {
+    position: absolute;
+
+    left: 10px;
+    top: 8px;
+
+    z-index: 3;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   POSITION BADGE
+========================================= */
+
+.position {
+    position: absolute;
+
+    right: 10px;
+    top: 8px;
+
+    z-index: 3;
+
+    padding: 5px 8px;
+
+    background: #e30613;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   PLAYER INFORMATION
+========================================= */
+
+.player-info {
+    padding: 12px;
+}
+
+.player-info p {
+    color: #e30613;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.player-info h3 {
+    margin: 5px 0;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: 15px;
+}
+
+.player-info span {
+    color: #666;
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   PLAYER POSITIONS
+========================================= */
+
+/*
+             HOOP
+
+            AKAGI
+              C
+
+
+     RUKAWA        SAKURAGI
+       SF              PF
+
+
+            MITSUI
+              SG
+
+
+            MIYAGI
+              PG
+*/
+
+
+/* CENTER */
+
+.position-c {
+    left: 50%;
+    top: 90px;
+
+    transform:
+        translateX(-50%);
+}
+
+.position-c:hover {
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        scale(1.04);
+}
+
+
+/* SMALL FORWARD */
+
+.position-sf {
+    left: 12%;
+    top: 315px;
+}
+
+
+/* POWER FORWARD */
+
+.position-pf {
+    right: 12%;
+    top: 315px;
+}
+
+
+/* SHOOTING GUARD */
+
+.position-sg {
+    left: 50%;
+    top: 540px;
+
+    transform:
+        translateX(-50%);
+}
+
+.position-sg:hover {
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        scale(1.04);
+}
+
+
+/* POINT GUARD */
+
+.position-pg {
+    left: 50%;
+    top: 765px;
+
+    transform:
+        translateX(-50%);
+}
+
+.position-pg:hover {
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        scale(1.04);
+}
+
+
+/* Side card hover */
+
+.position-sf:hover,
+.position-pf:hover {
+    transform:
+        translateY(-8px)
+        scale(1.04);
+}
+
+
+/* =========================================
+   TEAM SECTION
+========================================= */
+
+.team-section {
+    min-height: 600px;
+
+    padding: 120px 10%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    background: #090909;
+}
+
+.team-content {
+    max-width: 650px;
+}
+
+.team-content > p:first-child {
+    color: #e30613;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.team-content h2 {
+    margin: 25px 0;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size:
+        clamp(55px, 8vw, 105px);
+
+    line-height: 0.85;
+}
+
+.team-content h2 span {
+    color: #e30613;
+}
+
+.team-description {
+    max-width: 550px;
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TEAM SYMBOL
+========================================= */
+
+.team-symbol {
+    width: 350px;
+    height: 350px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        3px solid
+        #e30613;
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-12deg);
+}
+
+.team-circle {
+    width: 230px;
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        8px solid
+        white;
+
+    border-radius: 50%;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: 55px;
+
+    color: #e30613;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-section {
+    min-height: 500px;
+
+    padding: 110px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+
+    background: #e30613;
+}
+
+.about-section > p:first-child {
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.about-section h2 {
+    margin: 25px 0;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size:
+        clamp(60px, 9vw, 120px);
+
+    line-height: 0.85;
+}
+
+.about-section h2 span {
+    color: #090909;
+}
+
+.about-section > p:last-child {
+    max-width: 600px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 70px 8%;
+
+    text-align: center;
+
+    background: #050505;
+}
+
+footer p {
+    margin: 15px 0;
+
+    color: #555;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+footer small {
+    color: #333;
+}
+
+
+/* =========================================
+   PLAYER POPUP
+========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 9999;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    background: #151515;
+
+    border:
+        2px solid
+        #e30613;
+
+    box-shadow:
+        0 0 70px
+        rgba(227, 6, 19, 0.3);
+
+    animation:
+        modalOpen 0.25s ease;
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Close button */
+
+.close {
+    position: absolute;
+
+    right: 18px;
+    top: 10px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e30613;
+}
+
+
+/* Modal position */
+
+.modal-content > p:first-of-type {
+    color: #e30613;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.modal-content h2 {
+    margin: 10px 0;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: 42px;
+}
+
+.modal-content > span {
+    color: #666;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin: 35px 0;
+}
+
+.stats div {
+    padding: 18px 8px;
+
+    text-align: center;
+
+    background: #090909;
+
+    border:
+        1px solid
+        #292929;
+}
+
+.stats strong {
+    display: block;
+
+    color: #e30613;
+
+    font-family: Impact, Arial, sans-serif;
+
+    font-size: 28px;
+}
+
+.stats span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    font-weight: bold;
+}
+
+.modal-description {
+    color: #888;
+
+    line-height: 1.8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero-ball {
+        opacity: 0.15;
+
+        right: -40px;
+    }
+
+    .team-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================
+   MOBILE COURT
+========================================= */
+
+@media (max-width: 700px) {
+
+    .basketball-court {
+
+        height: auto;
+
+        min-height: 0;
+
+        padding:
+            35px 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+
+        overflow: visible;
+    }
+
+    .center-line,
+    .center-circle,
+    .three-point-line,
+    .key-area,
+    .hoop {
+        display: none;
+    }
+
+    .player-card,
+    .position-c,
+    .position-sf,
+    .position-pf,
+    .position-sg,
+    .position-pg {
+
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+
+        width: min(300px, 100%);
+
+        transform: none;
+    }
+
+    .position-c:hover,
+    .position-sg:hover,
+    .position-pg:hover,
+    .position-sf:hover,
+    .position-pf:hover {
+
+        transform:
+            translateY(-8px)
+            scale(1.03);
+    }
+
+    .player-image {
+        height: 210px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .team-symbol {
+        width: 260px;
+        height: 260px;
+    }
+
+    .team-circle {
+        width: 170px;
+        height: 170px;
+
+        font-size: 40px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 450px) {
+
+    .hero {
+        padding:
+            120px 7%;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+    }
+
+    .players-section,
+    .team-section,
+    .about-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-content {
+        padding: 35px 22px;
+    }
+
+    .modal-content h2 {
+        font-size: 30px;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}

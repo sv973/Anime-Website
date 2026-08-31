@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Slam Dunk | Shohoku Basketball</title>
+
+    <link rel="stylesheet" href="slamdunk.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            SLAM<span>DUNK</span>
+        </div>
+
+
+        <nav>
+
+            <a href="#home">
+                HOME
+            </a>
+
+            <a href="#players">
+                LINEUP
+            </a>
+
+            <a href="#team">
+                SHOHOKU
+            </a>
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+        </nav>
+
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section
+        id="home"
+        class="hero"
+    >
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                SHOHOKU HIGH SCHOOL
+            </p>
+
+
+            <h1>
+                SLAM<br>
+                <span>DUNK</span>
+            </h1>
+
+
+            <p class="hero-description">
+                Five players. One court.
+                One dream of becoming the best.
+            </p>
+
+
+            <a
+                href="#players"
+                class="hero-button"
+            >
+                VIEW THE LINEUP →
+            </a>
+
+        </div>
+
+
+        <div class="hero-ball">
+            🏀
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PLAYERS
+    ====================================== -->
+
+    <section
+        id="players"
+        class="players-section"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p>
+                    SHOHOKU HIGH SCHOOL
+                </p>
+
+                <h2>
+                    STARTING FIVE
+                </h2>
+
+            </div>
+
+
+            <div class="player-count">
+                05 PLAYERS
+            </div>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+            <input
+                id="playerSearch"
+                type="text"
+                placeholder="SEARCH PLAYER..."
+                onkeyup="searchPlayers()"
+            >
+
+            <span>
+                ⌕
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================
+             BASKETBALL COURT
+        ====================================== -->
+
+        <div class="basketball-court">
+
+
+            <!-- COURT MARKINGS -->
+
+            <div class="center-line"></div>
+
+            <div class="center-circle"></div>
+
+            <div class="three-point-line"></div>
+
+            <div class="key-area"></div>
+
+            <div class="hoop">
+                🏀
+            </div>
+
+
+
+            <!-- =================================
+                 AKAGI
+            ================================== -->
+
+            <div
+                class="player-card position-c"
+                data-name="Takenori Akagi"
+                onclick="openPlayer('akagi')"
+            >
+
+                <div class="player-image akagi">
+
+
+                    <!-- PLAYER IMAGE -->
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSylPy4XAfypv3TGrOCDc8YRQF3nu3xicGVEj7rPfxwoA&s=10"
+                        alt="Takenori Akagi"
+                        height="165"
+                    >
+
+
+                    <!-- NUMBER -->
+
+                    <div class="player-number">
+                        4
+                    </div>
+
+
+                    <!-- POSITION -->
+
+                    <div class="position">
+                        C
+                    </div>
+
+                </div>
+
+
+                <div class="player-info">
+
+                    <p>
+                        SHOHOKU
+                    </p>
+
+                    <h3>
+                        TAKENORI AKAGI
+                    </h3>
+
+                    <span>
+                        THE GORILLA
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 RUKAWA
+            ================================== -->
+
+            <div
+                class="player-card position-sf"
+                data-name="Kaede Rukawa"
+                onclick="openPlayer('rukawa')"
+            >
+
+                <div class="player-image rukawa">
+
+
+                    <!-- PLAYER IMAGE -->
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-4T8fBmytuG4OTzqvI-DaPWWhLPrv4swJR9mGW6Rlg&s=10"
+                        alt="Kaede Rukawa"
+                        height="165px"
+                    >
+
+
+                    <!-- NUMBER -->
+
+                    <div class="player-number">
+                        11
+                    </div>
+
+
+                    <!-- POSITION -->
+
+                    <div class="position">
+                        SF
+                    </div>
+
+                </div>
+
+
+                <div class="player-info">
+
+                    <p>
+                        SHOHOKU
+                    </p>
+
+                    <h3>
+                        KAEDE RUKAWA
+                    </h3>
+
+                    <span>
+                        ACE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SAKURAGI
+            ================================== -->
+
+            <div
+                class="player-card position-pf"
+                data-name="Hanamichi Sakuragi"
+                onclick="openPlayer('sakuragi')"
+            >
+
+                <div class="player-image sakuragi">
+
+
+                    <!-- PLAYER IMAGE -->
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Oyn4DvaCTYC7O6vat3pCAz5Fjg4rmjo_j3xPYZwMXQ&s=10"
+                        alt="Hanamichi Sakuragi"
+                        height="165"
+                        width = '180px'
+                    >
+
+
+                    <!-- NUMBER -->
+
+                    <div class="player-number">
+                        10
+                    </div>
+
+
+                    <!-- POSITION -->
+
+                    <div class="position">
+                        PF
+                    </div>
+
+                </div>
+
+
+                <div class="player-info">
+
+                    <p>
+                        SHOHOKU
+                    </p>
+
+                    <h3>
+                        HANAMICHI SAKURAGI
+                    </h3>
+
+                    <span>
+                        BASKETBALL GENIUS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 MITSUI
+            ================================== -->
+
+            <div
+                class="player-card position-sg"
+                data-name="Hisashi Mitsui"
+                onclick="openPlayer('mitsui')"
+            >
+
+                <div class="player-image mitsui">
+
+
+                    <!-- PLAYER IMAGE -->
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAM27pyWFqyAx3FuipTERb3P2NZTAzFCGRTCIpGdHsxQ&s=10"
+                        alt="Hisashi Mitsui"
+                        width="180"
+                        height="165"
+                    >
+
+
+                    <!-- NUMBER -->
+
+                    <div class="player-number">
+                        14
+                    </div>
+
+
+                    <!-- POSITION -->
+
+                    <div class="position">
+                        SG
+                    </div>
+
+                </div>
+
+
+                <div class="player-info">
+
+                    <p>
+                        SHOHOKU
+                    </p>
+
+                    <h3>
+                        HISASHI MITSUI
+                    </h3>
+
+                    <span>
+                        THREE-POINT SHOOTER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 MIYAGI
+            ================================== -->
+
+            <div
+                class="player-card position-pg"
+                data-name="Ryota Miyagi"
+                onclick="openPlayer('miyagi')"
+            >
+
+                <div class="player-image miyagi">
+
+
+                    <!-- PLAYER IMAGE -->
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS5VbYERGiIfS0RRAY87yXM1VDcNrNuF6jjGK7ingNkw&s=10"
+                        alt="Ryota Miyagi"
+                        width="180"
+                        height="165"
+                    >
+
+
+                    <!-- NUMBER -->
+
+                    <div class="player-number">
+                        7
+                    </div>
+
+
+                    <!-- POSITION -->
+
+                    <div class="position">
+                        PG
+                    </div>
+
+                </div>
+
+
+                <div class="player-info">
+
+                    <p>
+                        SHOHOKU
+                    </p>
+
+                    <h3>
+                        RYOTA MIYAGI
+                    </h3>
+
+                    <span>
+                        SPEEDSTER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SHOHOKU SECTION
+    ====================================== -->
+
+    <section
+        id="team"
+        class="team-section"
+    >
+
+        <div class="team-content">
+
+            <p>
+                SHOHOKU HIGH SCHOOL
+            </p>
+
+
+            <h2>
+                ONE TEAM.<br>
+                <span>ONE DREAM.</span>
+            </h2>
+
+
+            <p class="team-description">
+
+                Shohoku's starting five combines
+                power, speed, shooting, defense,
+                and determination.
+
+                Every player brings something
+                different to the court.
+
+            </p>
+
+        </div>
+
+
+        <div class="team-symbol">
+
+            <div class="team-circle">
+                SHO
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ABOUT
+    ====================================== -->
+
+    <section
+        id="about"
+        class="about-section"
+    >
+
+        <p>
+            ABOUT SLAM DUNK
+        </p>
+
+
+        <h2>
+            PLAY<br>
+            <span>WITH EVERYTHING.</span>
+        </h2>
+
+
+        <p>
+
+            Slam Dunk follows Hanamichi Sakuragi
+            as he discovers basketball and begins
+            his journey with Shohoku High School.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <div class="logo">
+            SLAM<span>DUNK</span>
+        </div>
+
+
+        <p>
+            SHOHOKU HIGH SCHOOL BASKETBALL
+        </p>
+
+
+        <small>
+            FAN WEBSITE
+        </small>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         PLAYER POPUP
+    ====================================== -->
+
+    <div
+        id="playerModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+
+            <!-- CLOSE BUTTON -->
+
+            <button
+                class="close"
+                onclick="closePlayer()"
+            >
+                ×
+            </button>
+
+
+
+            <!-- PLAYER POSITION -->
+
+            <p id="modalPosition">
+                C
+            </p>
+
+
+
+            <!-- PLAYER NAME -->
+
+            <h2 id="modalName">
+                TAKENORI AKAGI
+            </h2>
+
+
+
+            <!-- NICKNAME -->
+
+            <span id="modalNickname">
+                THE GORILLA
+            </span>
+
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+
+                <div>
+
+                    <strong id="speed">
+                        78
+                    </strong>
+
+                    <span>
+                        SPEED
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="shooting">
+                        84
+                    </strong>
+
+                    <span>
+                        SHOOT
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="defense">
+                        97
+                    </strong>
+
+                    <span>
+                        DEFENSE
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="rebound">
+                        96
+                    </strong>
+
+                    <span>
+                        REBOUND
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                id="modalDescription"
+                class="modal-description"
+            >
+
+                Player description.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="slamdunk.js"></script>
+
+
+</body>
+
+</html>
