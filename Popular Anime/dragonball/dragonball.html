@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dragon Ball | Anime Archive</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #071426;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 20;
+}
+
+.logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff9d00;
+}
+
+.nav-button {
+    padding: 10px 20px;
+
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 30px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    backdrop-filter: blur(10px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 850px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 72% 42%,
+            rgba(255, 178, 0, .55),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(255, 106, 0, .25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #061120,
+            #0b284b 55%,
+            #d95108
+        );
+}
+
+/* Large energy circle */
+
+.energy {
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    right: -80px;
+    top: 120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,220,70,.9) 0%,
+            rgba(255,139,0,.45) 25%,
+            rgba(255,80,0,.15) 50%,
+            transparent 70%
+        );
+
+    filter: blur(3px);
+
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(.95);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+/* Dragon Ball */
+
+.dragon-ball {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff3a0,
+            #ffad00 35%,
+            #ed5b00 80%
+        );
+
+    border: 5px solid rgba(255,255,255,.45);
+
+    box-shadow:
+        0 0 25px #ff9d00,
+        0 0 70px rgba(255,150,0,.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    z-index: 4;
+}
+
+.ball-one {
+    right: 25%;
+    top: 19%;
+}
+
+.ball-two {
+    right: 8%;
+    bottom: 18%;
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+}
+
+.ball-three {
+    right: 36%;
+    bottom: 12%;
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+}
+
+/* Speed lines */
+
+.speed-line {
+    position: absolute;
+
+    height: 4px;
+
+    background: rgba(255,255,255,.2);
+
+    transform: rotate(-20deg);
+
+    border-radius: 20px;
+}
+
+.line-one {
+    width: 300px;
+    right: 2%;
+    top: 28%;
+}
+
+.line-two {
+    width: 200px;
+    right: 17%;
+    top: 67%;
+}
+
+.line-three {
+    width: 350px;
+    right: -5%;
+    top: 75%;
+}
+
+/* Hero content */
+
+.hero-content {
+    width: min(1200px, 86%);
+    margin: auto;
+
+    position: relative;
+    z-index: 10;
+}
+
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ffd21c;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    letter-spacing: 4px;
+}
+
+.kicker::before {
+    content: "";
+    width: 35px;
+    height: 3px;
+    background: #ff8c00;
+}
+
+.hero h1 {
+    margin-top: 20px;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: clamp(85px, 14vw, 175px);
+
+    line-height: .78;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-style: italic;
+
+    text-shadow:
+        5px 5px 0 #d94d00,
+        10px 10px 30px rgba(0,0,0,.3);
+}
+
+.hero h1 span {
+    color: #ffd21c;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    margin-top: 35px;
+
+    color: #d9e4ef;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.hero-buttons a {
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.primary {
+    background: #ff8b00;
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(255,130,0,.35);
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(255,130,0,.55);
+}
+
+.secondary {
+    border: 1px solid rgba(255,255,255,.5);
+    color: white;
+    background: rgba(255,255,255,.05);
+}
+
+.secondary:hover {
+    background: rgba(255,255,255,.15);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(1200px, 86%);
+    margin: auto;
+    padding: 100px 0;
+}
+
+/* =========================
+   POWER SECTION
+========================= */
+
+.power-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.section-label {
+    color: #ff9d00;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+}
+
+.section-title {
+    margin-top: 12px;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 55px;
+
+    text-transform: uppercase;
+
+    line-height: .9;
+}
+
+.section-title span {
+    color: #ff9418;
+}
+
+.section-text {
+    margin-top: 25px;
+
+    color: #9db0c5;
+
+    line-height: 1.8;
+}
+
+/* Power meter */
+
+.power-box {
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102c4e,
+            #091827
+        );
+
+    border-radius: 25px;
+
+    border: 1px solid #20496e;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.power-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    font-weight: 700;
+}
+
+.power-number {
+    color: #ffd21c;
+}
+
+.power-bar {
+    height: 16px;
+
+    background: #14283d;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.power-fill {
+    width: 92%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff6a00,
+            #ffd21c
+        );
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 20px rgba(255,170,0,.6);
+}
+
+.power-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.power-stat {
+    background: #0b1b2e;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.power-stat strong {
+    display: block;
+
+    color: #ff9d00;
+
+    font-size: 22px;
+}
+
+.power-stat span {
+    color: #71869c;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+}
+
+/* =========================
+   CHARACTER SECTION
+========================= */
+
+.characters {
+    margin-top: 120px;
+}
+
+.character-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 35px;
+}
+
+.character-header h2 {
+    font-family: 'Anton', sans-serif;
+
+    font-size: 55px;
+
+    text-transform: uppercase;
+
+    line-height: .9;
+}
+
+.character-header h2 span {
+    color: #ff9714;
+}
+
+.character-header p {
+    color: #71869c;
+}
+
+/* Cards */
+
+.character-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.character {
+    min-height: 330px;
+
+    position: relative;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            160deg,
+            #12355a,
+            #081522
+        );
+
+    border: 1px solid #245073;
+
+    transition: .35s;
+}
+
+.character::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    right: -60px;
+    top: -60px;
+
+    background: #ff7d00;
+
+    opacity: .12;
+
+    filter: blur(15px);
+}
+
+.character:hover {
+    transform: translateY(-10px) rotate(-1deg);
+
+    border-color: #ff9d00;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 25px rgba(255,145,0,.15);
+}
+
+.character-number {
+    font-family: 'Anton', sans-serif;
+
+    font-size: 50px;
+
+    color: rgba(255,255,255,.08);
+}
+
+.character h3 {
+    margin-top: 120px;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 28px;
+
+    letter-spacing: 1px;
+}
+
+.character p {
+    margin-top: 8px;
+
+    color: #8fa5ba;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   DRAGON BALL SECTION
+========================= */
+
+.dragon-section {
+    margin-top: 120px;
+
+    padding: 70px 50px;
+
+    border-radius: 35px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255,180,0,.35),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #123d70,
+            #081727
+        );
+
+    border: 1px solid #25537b;
+}
+
+.dragon-section::after {
+    content: "★";
+
+    position: absolute;
+
+    right: 5%;
+    top: -45px;
+
+    font-size: 300px;
+
+    color: rgba(255,190,0,.08);
+}
+
+.dragon-section h2 {
+    position: relative;
+    z-index: 2;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 65px;
+
+    text-transform: uppercase;
+}
+
+.dragon-section h2 span {
+    color: #ffd21c;
+}
+
+.dragon-section p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    color: #b6c8da;
+
+    line-height: 1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px;
+
+    text-align: center;
+
+    background: #040b13;
+
+    color: #53687b;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .power-section {
+        grid-template-columns: 1fr;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .energy {
+        opacity: .5;
+    }
+
+    .dragon-ball {
+        opacity: .6;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character-header {
+        display: block;
+    }
+
+    .character-header p {
+        margin-top: 15px;
+    }
+
+    .power-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dragon-section {
+        padding: 40px 25px;
+    }
+
+    .dragon-section h2 {
+        font-size: 45px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        ANIME <span>ARCHIVE</span>
+    </div>
+
+    <a
+        href="website.html"
+        class="nav-button">
+        ← BACK TO ANIME
+    </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="energy"></div>
+
+    <div class="dragon-ball ball-one">★</div>
+    <div class="dragon-ball ball-two">★</div>
+    <div class="dragon-ball ball-three">★</div>
+
+    <div class="speed-line line-one"></div>
+    <div class="speed-line line-two"></div>
+    <div class="speed-line line-three"></div>
+
+
+    <div class="hero-content">
+
+        <div class="kicker">
+            LEGENDARY WARRIORS
+        </div>
+
+        <h1>
+            DRAGON<br>
+            <span>BALL</span>
+        </h1>
+
+        <p class="hero-description">
+            Follow Goku and his friends as they train, explore,
+            compete, and face some of the strongest warriors in
+            the universe.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#characters"
+                class="primary">
+                EXPLORE CHARACTERS
+            </a>
+
+            <a
+                href="#power"
+                class="secondary">
+                POWER LEVEL
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main>
+
+    <!-- POWER -->
+
+    <section
+        class="power-section"
+        id="power">
+
+        <div>
+
+            <div class="section-label">
+                POWER SYSTEM
+            </div>
+
+            <h2 class="section-title">
+                PUSH<br>
+                YOUR <span>LIMITS</span>
+            </h2>
+
+            <p class="section-text">
+                Dragon Ball is built around training, transformation,
+                martial arts, and constantly surpassing previous
+                limits. Every battle pushes the fighters toward
+                something stronger.
+            </p>
+
+        </div>
+
+
+        <div class="power-box">
+
+            <div class="power-header">
+
+                <span>GOKU</span>
+
+                <span class="power-number">
+                    92%
+                </span>
+
+            </div>
+
+            <div class="power-bar">
+                <div class="power-fill"></div>
+            </div>
+
+
+            <div class="power-stats">
+
+                <div class="power-stat">
+                    <strong>SSJ</strong>
+                    <span>Form</span>
+                </div>
+
+                <div class="power-stat">
+                    <strong>KI</strong>
+                    <span>Energy</span>
+                </div>
+
+                <div class="power-stat">
+                    <strong>∞</strong>
+                    <span>Potential</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTERS -->
+
+    <section
+        class="characters"
+        id="characters">
+
+        <div class="character-header">
+
+            <div>
+
+                <div class="section-label">
+                    WARRIOR DATABASE
+                </div>
+
+                <h2>
+                    THE <span>FIGHTERS</span>
+                </h2>
+
+            </div>
+
+            <p>
+                SELECT YOUR WARRIOR
+            </p>
+
+        </div>
+
+
+        <div class="character-grid">
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    01
+                </div>
+
+                <h3>GOKU</h3>
+
+                <p>
+                    A Saiyan warrior who constantly searches
+                    for stronger opponents and new challenges.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    02
+                </div>
+
+                <h3>VEGETA</h3>
+
+                <p>
+                    The proud Saiyan prince whose rivalry with
+                    Goku drives him to become stronger.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    03
+                </div>
+
+                <h3>GOHAN</h3>
+
+                <p>
+                    Goku's son whose incredible potential has
+                    made him one of Earth's strongest fighters.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    04
+                </div>
+
+                <h3>PICCOLO</h3>
+
+                <p>
+                    A powerful Namekian warrior and mentor
+                    who plays a major role in Earth's defense.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- DRAGON BALL -->
+
+    <section class="dragon-section">
+
+        <h2>
+            FIND THE <span>DRAGON BALLS</span>
+        </h2>
+
+        <p>
+            Seven mysterious Dragon Balls are scattered across
+            the world. Bring them together and summon the
+            legendary dragon.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    DRAGON BALL // ANIME ARCHIVE
+
+</footer>
+
+</body>
+</html>

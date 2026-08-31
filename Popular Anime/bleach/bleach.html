@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bleach | Anime Archive</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f4f4f4;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 50;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 32px;
+
+    letter-spacing: 5px;
+}
+
+.logo span {
+    color: #ff5b21;
+}
+
+.back-button {
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    padding: 11px 18px;
+
+    border: 1px solid #555;
+
+    transition: .3s;
+}
+
+.back-button:hover {
+    background: #ff5b21;
+    border-color: #ff5b21;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 900px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(255, 82, 25, .25),
+            transparent 25%
+        ),
+        linear-gradient(
+            115deg,
+            #020202 0%,
+            #090909 50%,
+            #151515 100%
+        );
+}
+
+/* Huge Japanese-style background text */
+
+.hero::before {
+    content: "死神";
+
+    position: absolute;
+
+    right: -40px;
+    top: 80px;
+
+    font-size: 420px;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,.025);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+/* Orange diagonal slash */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 850px;
+    height: 3px;
+
+    background: #ff5b21;
+
+    right: -180px;
+    top: 48%;
+
+    transform: rotate(-55deg);
+
+    box-shadow:
+        0 0 20px rgba(255,91,33,.8),
+        0 0 60px rgba(255,91,33,.3);
+}
+
+/* =====================================================
+   SPIRIT PARTICLES
+===================================================== */
+
+.spirit {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ff7542;
+
+    box-shadow: 0 0 15px #ff5b21;
+
+    animation: float 5s infinite ease-in-out;
+}
+
+.s1 {
+    right: 25%;
+    top: 25%;
+}
+
+.s2 {
+    right: 40%;
+    top: 65%;
+
+    animation-delay: 1s;
+}
+
+.s3 {
+    right: 12%;
+    top: 72%;
+
+    animation-delay: 2s;
+}
+
+.s4 {
+    right: 48%;
+    top: 20%;
+
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+        opacity: .3;
+    }
+
+    50% {
+        transform: translateY(-35px);
+        opacity: 1;
+    }
+}
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+    width: min(1200px, 86%);
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.hero-label {
+    color: #ff5b21;
+
+    font-size: 13px;
+
+    letter-spacing: 6px;
+
+    font-weight: 700;
+}
+
+.hero h1 {
+    margin-top: 18px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(110px, 17vw, 230px);
+
+    line-height: .72;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: #ff5b21;
+
+    display: block;
+
+    margin-left: 80px;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    margin-top: 45px;
+
+    color: #9c9c9c;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+
+    padding: 14px 24px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.primary {
+    background: #ff5b21;
+
+    color: white;
+}
+
+.primary:hover {
+    background: #ff7845;
+
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 1px solid #555;
+
+    color: white;
+}
+
+.secondary:hover {
+    border-color: #ff5b21;
+
+    color: #ff5b21;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    width: min(1200px, 86%);
+
+    margin: auto;
+
+    padding: 110px 0;
+}
+
+/* =====================================================
+   SECTION TITLES
+===================================================== */
+
+.section-label {
+    color: #ff5b21;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 70px;
+
+    letter-spacing: 2px;
+
+    line-height: .9;
+}
+
+/* =====================================================
+   STORY SECTION
+===================================================== */
+
+.story {
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.story-number {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 210px;
+
+    line-height: .7;
+
+    color: #111;
+
+    -webkit-text-stroke: 1px #2b2b2b;
+}
+
+.story-content {
+    border-left: 2px solid #ff5b21;
+
+    padding-left: 35px;
+}
+
+.story-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 65px;
+
+    letter-spacing: 2px;
+}
+
+.story-content h2 span {
+    color: #ff5b21;
+}
+
+.story-content p {
+    margin-top: 25px;
+
+    color: #8d8d8d;
+
+    line-height: 1.9;
+}
+
+/* =====================================================
+   ZANPAKUTO SECTION
+===================================================== */
+
+.zanpakuto {
+    margin-top: 140px;
+}
+
+.zanpakuto-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 45px;
+}
+
+.zanpakuto-header p {
+    color: #666;
+
+    max-width: 350px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    text-align: right;
+}
+
+/* Weapon cards */
+
+.weapon-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.weapon {
+    height: 400px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    background: #0c0c0c;
+
+    border: 1px solid #252525;
+
+    transition: .4s;
+}
+
+.weapon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+    height: 450px;
+
+    background: #ff5b21;
+
+    right: 45px;
+    top: -30px;
+
+    transform: rotate(25deg);
+
+    opacity: .7;
+}
+
+.weapon:hover {
+    transform: translateY(-8px);
+
+    border-color: #ff5b21;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.6),
+        0 0 30px rgba(255,91,33,.08);
+}
+
+.weapon-number {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 55px;
+
+    color: #292929;
+}
+
+.weapon h3 {
+    position: absolute;
+
+    bottom: 80px;
+
+    left: 30px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 38px;
+
+    letter-spacing: 2px;
+}
+
+.weapon p {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 30px;
+
+    right: 30px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+/* =====================================================
+   CHARACTER SECTION
+===================================================== */
+
+.characters {
+    margin-top: 140px;
+}
+
+.character-grid {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.character {
+    min-height: 350px;
+
+    position: relative;
+
+    background: #0c0c0c;
+
+    border: 1px solid #242424;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    transition: .35s;
+}
+
+.character:hover {
+    border-color: #ff5b21;
+
+    transform: translateY(-8px);
+}
+
+.character::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: #ff5b21;
+
+    bottom: 0;
+
+    left: -100%;
+
+    transition: .4s;
+}
+
+.character:hover::after {
+    left: 0;
+}
+
+.character-number {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 65px;
+
+    color: #191919;
+}
+
+.character h3 {
+    margin-top: 125px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+}
+
+.character .role {
+    margin-top: 5px;
+
+    color: #ff5b21;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.character p {
+    margin-top: 12px;
+
+    color: #737373;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+/* =====================================================
+   SOUL SOCIETY
+===================================================== */
+
+.soul-society {
+    margin-top: 140px;
+
+    padding: 80px 60px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eeeeeb;
+
+    color: #080808;
+}
+
+.soul-society::before {
+    content: "尸魂界";
+
+    position: absolute;
+
+    right: -20px;
+
+    top: -60px;
+
+    font-size: 250px;
+
+    color: rgba(0,0,0,.035);
+}
+
+.soul-society .section-label {
+    color: #ff5b21;
+}
+
+.soul-society h2 {
+    position: relative;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 85px;
+
+    line-height: .8;
+}
+
+.soul-society h2 span {
+    color: #ff5b21;
+}
+
+.soul-society p {
+    position: relative;
+
+    max-width: 600px;
+
+    margin-top: 25px;
+
+    color: #555;
+
+    line-height: 1.8;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 45px;
+
+    text-align: center;
+
+    background: #020202;
+
+    border-top: 1px solid #222;
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .story-number {
+        display: none;
+    }
+
+    .weapon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 span {
+        margin-left: 20px;
+    }
+
+    .hero::after {
+        opacity: .3;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+    }
+
+    .hero h1 span {
+        margin-left: 0;
+    }
+
+    .hero-description {
+        margin-top: 30px;
+    }
+
+    .story-content h2 {
+        font-size: 50px;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .soul-society {
+        padding: 50px 30px;
+    }
+
+    .soul-society h2 {
+        font-size: 60px;
+    }
+
+    .zanpakuto-header {
+        display: block;
+    }
+
+    .zanpakuto-header p {
+        margin-top: 20px;
+        text-align: left;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        ANIME <span>ARCHIVE</span>
+    </div>
+
+    <a
+        href="../../index.html"
+        class="back-button">
+        ← BACK TO ANIME
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="spirit s1"></div>
+    <div class="spirit s2"></div>
+    <div class="spirit s3"></div>
+    <div class="spirit s4"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            SOUL REAPER // SUBSTITUTE
+        </div>
+
+        <h1>
+            BLEACH
+            <span>BLEACH</span>
+        </h1>
+
+        <p class="hero-description">
+            Ichigo Kurosaki's ordinary life disappears when he gains
+            the powers of a Soul Reaper. Now he must protect the living
+            while confronting Hollows, Soul Reapers, and enemies from
+            worlds beyond his own.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#characters"
+                class="primary">
+                MEET THE SOUL REAPERS
+            </a>
+
+            <a
+                href="#zanpakuto"
+                class="secondary">
+                ZANPAKUTŌ
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <!-- STORY -->
+
+    <section class="story">
+
+        <div class="story-number">
+            01
+        </div>
+
+
+        <div class="story-content">
+
+            <div class="section-label">
+                THE STORY
+            </div>
+
+            <h2>
+                BETWEEN TWO <span>WORLDS</span>
+            </h2>
+
+            <p>
+                Ichigo Kurosaki can see ghosts, but his life changes
+                completely after meeting Rukia Kuchiki. When he becomes
+                a Substitute Soul Reaper, he is pulled into a hidden
+                supernatural world filled with powerful warriors,
+                dangerous Hollows, and ancient secrets.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ZANPAKUTO -->
+
+    <section
+        class="zanpakuto"
+        id="zanpakuto">
+
+        <div class="zanpakuto-header">
+
+            <div>
+
+                <div class="section-label">
+                    SOUL REAPER DATABASE
+                </div>
+
+                <h2 class="section-title">
+                    ZANPAKUTŌ
+                </h2>
+
+            </div>
+
+            <p>
+                Every Soul Reaper carries a unique Zanpakutō,
+                a weapon connected to their own spiritual power.
+            </p>
+
+        </div>
+
+
+        <div class="weapon-grid">
+
+
+            <div class="weapon">
+
+                <div class="weapon-number">
+                    01
+                </div>
+
+                <h3>ZANGETSU</h3>
+
+                <p>
+                    Ichigo Kurosaki's iconic Zanpakutō and
+                    the weapon through which he channels his power.
+                </p>
+
+            </div>
+
+
+            <div class="weapon">
+
+                <div class="weapon-number">
+                    02
+                </div>
+
+                <h3>SENBONZAKURA</h3>
+
+                <p>
+                    Byakuya Kuchiki's elegant Zanpakutō
+                    capable of creating countless blade fragments.
+                </p>
+
+            </div>
+
+
+            <div class="weapon">
+
+                <div class="weapon-number">
+                    03
+                </div>
+
+                <h3>HYŌRINMARU</h3>
+
+                <p>
+                    Tōshirō Hitsugaya's ice-based Zanpakutō
+                    with enormous elemental power.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTERS -->
+
+    <section
+        class="characters"
+        id="characters">
+
+        <div class="section-label">
+            SOUL SOCIETY DATABASE
+        </div>
+
+        <h2 class="section-title">
+            SOUL REAPERS
+        </h2>
+
+
+        <div class="character-grid">
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    01
+                </div>
+
+                <h3>ICHIGO KUROSAKI</h3>
+
+                <div class="role">
+                    SUBSTITUTE SOUL REAPER
+                </div>
+
+                <p>
+                    A human teenager who becomes a Soul Reaper
+                    and protects both humans and spirits.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    02
+                </div>
+
+                <h3>RUKIA KUCHIKI</h3>
+
+                <div class="role">
+                    SOUL REAPER
+                </div>
+
+                <p>
+                    The Soul Reaper who introduces Ichigo
+                    to the supernatural world.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    03
+                </div>
+
+                <h3>BYAKUYA KUCHIKI</h3>
+
+                <div class="role">
+                    CAPTAIN
+                </div>
+
+                <p>
+                    Captain of the Sixth Division and master
+                    of the powerful Senbonzakura.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    04
+                </div>
+
+                <h3>KENPACHI ZARAKI</h3>
+
+                <div class="role">
+                    CAPTAIN
+                </div>
+
+                <p>
+                    A legendary warrior who lives for the
+                    thrill of fighting powerful opponents.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- SOUL SOCIETY -->
+
+    <section class="soul-society">
+
+        <div class="section-label">
+            DESTINATION
+        </div>
+
+        <h2>
+            SOUL<br>
+            <span>SOCIETY</span>
+        </h2>
+
+        <p>
+            Beyond the human world lies the Soul Society,
+            home of the Soul Reapers and the Gotei 13.
+            Its history is filled with powerful captains,
+            ancient traditions, and battles that shape
+            the balance between worlds.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    BLEACH // ANIME ARCHIVE
+
+</footer>
+
+</body>
+</html>

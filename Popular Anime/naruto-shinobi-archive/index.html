@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naruto — Shinobi Archive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chakra-field" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home"><span>🍥</span> SHINOBI ARCHIVE</a>
+    <nav>
+      <a href="#team7">Team 7</a>
+      <a href="#jutsu">Jutsu</a>
+      <a href="#hokage">Hokage</a>
+      <a href="#akatsuki">Akatsuki</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content reveal">
+        <div class="eyebrow">木ノ葉隠れ • HIDDEN LEAF ARCHIVE</div>
+        <h1>THE <span>WILL</span><br>OF FIRE</h1>
+        <p>Enter the shinobi world. Explore Team 7, legendary jutsu, the Hokage, and the shadows of the Akatsuki.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#team7">Enter the Archive →</a>
+          <button class="btn ghost" id="chakraBtn">Activate Chakra</button>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <div class="leaf-symbol">🍃</div>
+        <span>KONOHA</span>
+      </div>
+      <div class="scroll">SCROLL <span>↓</span></div>
+    </section>
+
+    <section id="team7" class="section dark">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">SHINOBI DATABASE / 001</div>
+          <h2>TEAM <span>7</span></h2>
+        </div>
+        <p>Four shinobi. One legendary team. Select a dossier to reveal their story.</p>
+      </div>
+
+      <div class="dossier-grid">
+        <article class="dossier naruto reveal">
+          <div class="portrait">
+            <div class="portrait-placeholder">N</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScgd-otSZ-ohV1t9cRbETOBZmiPCa2GyUDWoodJIvEXA&s=10" alt="">
+            <span class="number">01</span>
+            <span class="rank">GENIN → HOKAGE</span>
+          </div>
+          <div class="dossier-body">
+            <div class="village">🍃 HIDDEN LEAF</div>
+            <h3>Naruto <span>Uzumaki</span></h3>
+            <p>“The loud, unpredictable ninja who refused to give up on his dream.”</p>
+            <div class="tags"><span>Jinchūriki</span><span>Wind Style</span><span>Uzumaki</span></div>
+            <button class="profile-btn" data-name="Naruto Uzumaki" data-info="Naruto grows from an isolated young ninja into the Seventh Hokage. His greatest strength is his determination to protect his friends and never abandon his promise.">OPEN DOSSIER ↗</button>
+          </div>
+        </article>
+
+        <article class="dossier sasuke reveal">
+          <div class="portrait">
+            <div class="portrait-placeholder">S</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzz_3XCbeZx5p2mMxKVNCw3U8OFWVBOdtK4MC_XCqIBw&s=10" alt="">
+            <span class="number">02</span>
+            <span class="rank">GENIN → SHINOBI</span>
+          </div>
+          <div class="dossier-body">
+            <div class="village">🍃 UCHIHA CLAN</div>
+            <h3>Sasuke <span>Uchiha</span></h3>
+            <p>“A prodigy whose search for power takes him far from home.”</p>
+            <div class="tags"><span>Sharingan</span><span>Lightning</span><span>Uchiha</span></div>
+            <button class="profile-btn" data-name="Sasuke Uchiha" data-info="Sasuke is the last major survivor of the Uchiha clan. His journey is shaped by loss, rivalry, and an evolving understanding of what it means to protect the village.">OPEN DOSSIER ↗</button>
+          </div>
+        </article>
+
+        <article class="dossier sakura reveal">
+          <div class="portrait">
+            <div class="portrait-placeholder">S</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLVmQvFHclPBvTaMFqVUaHe5ijKQs9QejTgOeQN9hqNw&s=10" alt="">
+            <span class="number">03</span>
+            <span class="rank">GENIN → MEDICAL NIN</span>
+          </div>
+          <div class="dossier-body">
+            <div class="village">🍃 HIDDEN LEAF</div>
+            <h3>Sakura <span>Haruno</span></h3>
+            <p>“A brilliant medical ninja with strength that can shake the battlefield.”</p>
+            <div class="tags"><span>Medical</span><span>Strength</span><span>Chakra Control</span></div>
+            <button class="profile-btn" data-name="Sakura Haruno" data-info="Sakura becomes an elite medical ninja and develops extraordinary physical strength. Her precision with chakra makes her one of the team's most valuable specialists.">OPEN DOSSIER ↗</button>
+          </div>
+        </article>
+
+        <article class="dossier kakashi reveal">
+          <div class="portrait">
+            <div class="portrait-placeholder">K</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrLFB4iHpJD3YN2RBWpnuxNYUsMIFB8juWgJ1Y6V0mbw&s=10" alt="">
+            <span class="number">04</span>
+            <span class="rank">JŌNIN / COPY NINJA</span>
+          </div>
+          <div class="dossier-body">
+            <div class="village">🍃 HIDDEN LEAF</div>
+            <h3>Kakashi <span>Hatake</span></h3>
+            <p>“The masked copy ninja who teaches Team 7 the meaning of teamwork.”</p>
+            <div class="tags"><span>Sharingan</span><span>Lightning</span><span>Jōnin</span></div>
+            <button class="profile-btn" data-name="Kakashi Hatake" data-info="Kakashi leads Team 7 and teaches his students that teamwork matters more than simply completing a mission. He is known as the Copy Ninja for his mastery of many techniques.">OPEN DOSSIER ↗</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="jutsu" class="section parchment">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow dark-text">SHINOBI DATABASE / 002</div>
+          <h2>FORBIDDEN <span>SCROLL</span></h2>
+        </div>
+        <p class="dark-text">Signature techniques recorded in the archive.</p>
+      </div>
+
+      <div class="jutsu-list">
+        <button class="jutsu active reveal" data-jutsu="rasengan">
+          <span class="j-icon">🌀</span><span><b>Rasengan</b><small>Shape Transformation</small></span><strong>01</strong>
+        </button>
+        <button class="jutsu reveal" data-jutsu="chidori">
+          <span class="j-icon">⚡</span><span><b>Chidori</b><small>Lightning Release</small></span><strong>02</strong>
+        </button>
+        <button class="jutsu reveal" data-jutsu="shadow">
+          <span class="j-icon">👥</span><span><b>Shadow Clone</b><small>Ninjutsu</small></span><strong>03</strong>
+        </button>
+        <button class="jutsu reveal" data-jutsu="fire">
+          <span class="j-icon">🔥</span><span><b>Fireball Jutsu</b><small>Fire Release</small></span><strong>04</strong>
+        </button>
+      </div>
+
+      <div class="jutsu-display reveal">
+        <div class="seal">印</div>
+        <div>
+          <div class="eyebrow dark-text">TECHNIQUE PROFILE</div>
+          <h3 id="jutsuTitle">RASENGAN</h3>
+          <p id="jutsuText">A concentrated sphere of rotating chakra. The technique requires precise control and has become one of Naruto's defining techniques.</p>
+        </div>
+        <div class="power">S<br><small>RANK</small></div>
+      </div>
+    </section>
+
+    <section id="hokage" class="section hokage">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">SHINOBI DATABASE / 003</div>
+          <h2>THE <span>HOKAGE</span></h2>
+        </div>
+        <p>Leaders who carried the Will of Fire forward.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="hokage-card reveal"><span>I</span><h3>Hashirama</h3><p>God of Shinobi</p></div>
+        <div class="hokage-card reveal"><span>II</span><h3>Tobirama</h3><p>Water Release Master</p></div>
+        <div class="hokage-card reveal"><span>III</span><h3>Hiruzen</h3><p>The Professor</p></div>
+        <div class="hokage-card reveal"><span>IV</span><h3>Minato</h3><p>Yellow Flash</p></div>
+        <div class="hokage-card reveal"><span>V</span><h3>Tsunade</h3><p>Legendary Sannin</p></div>
+        <div class="hokage-card reveal"><span>VI</span><h3>Kakashi</h3><p>Copy Ninja</p></div>
+        <div class="hokage-card featured reveal"><span>VII</span><h3>Naruto</h3><p>Child of Prophecy</p></div>
+      </div>
+    </section>
+
+    <section id="akatsuki" class="section akatsuki">
+      <div class="akatsuki-overlay"></div>
+      <div class="akatsuki-content reveal">
+        <div class="eyebrow red">SHADOW ARCHIVE / 009</div>
+        <h2>THE <span>AKATSUKI</span></h2>
+        <p>Where the shinobi world meets the shadows. A criminal organization whose members pursued their own visions of power and peace.</p>
+        <div class="akatsuki-row">
+          <span>PAIN</span><span>ITACHI</span><span>KISAME</span><span>DEIDARA</span><span>SASORI</span><span>KONAN</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand">🍥 SHINOBI ARCHIVE</div>
+    <p>Fan-made Naruto-themed interface. Not affiliated with the official rights holders.</p>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close" id="closeModal">×</button>
+      <div class="eyebrow">CLASSIFIED DOSSIER</div>
+      <h2 id="modalName"></h2>
+      <p id="modalInfo"></p>
+      <div class="modal-line"></div>
+      <span>STATUS: <b>ARCHIVED</b></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

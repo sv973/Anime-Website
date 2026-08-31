@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>☠ One Piece Pirate Crew ☠</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Slab:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Roboto Slab", serif;
+      color: #f8e7b0;
+      background: #17100b;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 55px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+      border-bottom: 8px solid #8b5a20;
+    }
+
+    header h1 {
+      font-family: "Pirata One", cursive;
+      font-size: 5rem;
+      color: #f5c542;
+      text-shadow: 4px 4px 0 #241507, 0 0 20px #000;
+      letter-spacing: 5px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #fff0c4;
+    }
+
+    nav {
+      background: #0b0805;
+      border-bottom: 3px solid #9b6a2d;
+      padding: 18px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #f5c542;
+      text-decoration: none;
+      font-family: "Pirata One", cursive;
+      font-size: 1.3rem;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(10, 20, 30, .45), rgba(10, 5, 0, .8)),
+        url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .skull {
+      font-size: 5rem;
+    }
+
+    .hero h2 {
+      font-family: "Pirata One", cursive;
+      font-size: 3.5rem;
+      color: #f5c542;
+      text-shadow: 3px 3px #000;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      margin: 15px auto;
+      max-width: 650px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 30px;
+      background: #a52820;
+      border: 3px solid #e0a83a;
+      color: white;
+      text-decoration: none;
+      font-family: "Pirata One", cursive;
+      font-size: 1.4rem;
+      border-radius: 5px;
+      box-shadow: 0 5px 0 #48120e;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    section h2 {
+      font-family: "Pirata One", cursive;
+      text-align: center;
+      font-size: 3rem;
+      color: #f5c542;
+      margin-bottom: 35px;
+      text-shadow: 3px 3px #000;
+    }
+
+    section > p {
+      background: rgba(40, 25, 10, .75);
+      border: 2px solid #76501e;
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #382512, #1d1208);
+      border: 3px solid #805821;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 8px 15px rgba(0,0,0,.5);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px) rotate(-1deg);
+      border-color: #d9a52e;
+    }
+
+    .card h3 {
+      font-family: "Pirata One", cursive;
+      color: #f5c542;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #e6d3a3;
+    }
+
+    /* Crew member icons */
+    .member-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    /* Treasure */
+    .treasure {
+      text-align: center;
+      background: #0e0905;
+      border-top: 5px dashed #9b6a2d;
+      border-bottom: 5px dashed #9b6a2d;
+      max-width: none;
+    }
+
+    .treasure-box {
+      font-size: 5rem;
+    }
+
+    /* Marines */
+    .marines-section {
+      max-width: none;
+      background:
+        linear-gradient(rgba(7, 22, 40, .95), rgba(5, 15, 28, .98)),
+        repeating-linear-gradient(
+          45deg,
+          #102d48,
+          #102d48 10px,
+          #0b2238 10px,
+          #0b2238 20px
+        );
+      border-top: 8px solid #285b82;
+      border-bottom: 8px solid #285b82;
+    }
+
+    .marines-section h2 {
+      color: #9ed8ff;
+    }
+
+    .marines-intro {
+      max-width: 1000px;
+      margin: 0 auto 35px;
+      background: rgba(3, 14, 25, .85);
+      border: 2px solid #4c83aa;
+      color: #d8edff;
+    }
+
+    .marine-card {
+      background: linear-gradient(145deg, #173b5b, #091b2d);
+      border: 3px solid #4c83aa;
+    }
+
+    .marine-card h3 {
+      color: #9ed8ff;
+    }
+
+    .marine-card p {
+      color: #c7e2f5;
+    }
+
+    .marine-symbol {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .marine-rank {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 12px;
+      background: #315f7d;
+      border-radius: 20px;
+      color: white;
+      font-size: .85rem;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #080604;
+      border-top: 4px solid #805821;
+      color: #bda878;
+    }
+
+    footer .jolly {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 650px) {
+      header h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>☠ ONE PIECE ☠</h1>
+    <p>⚓ The seas are calling, matey! ⚓</p>
+  </header>
+
+  <nav>
+    <a href="#story">📜 Story</a>
+    <a href="#crew">🏴‍☠️ Crew</a>
+    <a href="#treasure">💰 Treasure</a>
+    <a href="#marines">⚓ Marines</a>
+    <a href="#foes">☠️ Powerful People</a>
+  </nav>
+
+  
+
+  <!-- STORY -->
+  <section id="story">
+    <h2>📜 The Pirate's Tale</h2>
+
+    <p>
+      One Piece follows Monkey D. Luffy, a fearless young pirate who dreams
+      of becoming the Pirate King. With his crew of loyal adventurers,
+      Luffy sails through dangerous waters, mysterious islands, powerful
+      enemies, and legendary battles while searching for the treasure
+      known as the One Piece.
+    </p>
+  </section>
+
+  <!-- STRAW HATS -->
+  <section id="crew">
+    <h2>🏴‍☠️ The Straw Hat Crew</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="member-icon">🍖</div>
+        <h3>Monkey D. Luffy</h3>
+        <p>
+          Captain of the Straw Hat Pirates and a future Pirate King.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">⚔️</div>
+        <h3>Roronoa Zoro</h3>
+        <p>
+          The crew's swordsman who dreams of becoming the world's greatest
+          swordsman.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🧭</div>
+        <h3>Nami</h3>
+        <p>
+          The navigator who dreams of creating a complete map of the world.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🎯</div>
+        <h3>Usopp</h3>
+        <p>
+          The Straw Hats' sniper and a brave warrior in the making.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🍳</div>
+        <h3>Sanji</h3>
+        <p>
+          The crew's cook and a master of devastating kicking techniques.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">📚</div>
+        <h3>Nico Robin</h3>
+        <p>
+          The archaeologist searching for the true history of the world.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🔧</div>
+        <h3>Franky</h3>
+        <p>
+          The shipwright and cyborg who built the Thousand Sunny.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🎻</div>
+        <h3>Brook</h3>
+        <p>
+          The crew's musician and a living skeleton with incredible sword
+          skills.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🦌</div>
+        <h3>Tony Tony Chopper</h3>
+        <p>
+          The Straw Hats' doctor and a reindeer who ate the Human-Human Fruit.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="member-icon">🐟</div>
+        <h3>Jinbe</h3>
+        <p>
+          The helmsman of the crew and a powerful Fish-Man Karate master.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TREASURE -->
+  <section id="treasure" class="treasure">
+    <div class="treasure-box">💰🏴‍☠️💎</div>
+
+    <h2>THE ONE PIECE</h2>
+
+    <p>
+      Somewhere beyond the Grand Line lies the legendary treasure that
+      could make its discoverer the Pirate King.
+    </p>
+  </section>
+
+  <!-- MARINES -->
+  <section id="marines" class="marines-section">
+
+    <h2>⚓ THE MARINES ⚓</h2>
+
+    <p class="marines-intro">
+      The Marines are the World Government's military force. Their goal is
+      to maintain order across the seas and bring dangerous pirates to justice.
+      From powerful Admirals to determined young officers, the Marines are
+      one of the greatest forces standing between pirates and absolute freedom.
+    </p>
+
+    <div class="cards">
+
+      <div class="card marine-card">
+        <div class="marine-symbol">🧊</div>
+        <h3>Kuzan (Aokiji)</h3>
+        <p>
+          A former Marine Admiral with the power to create and control ice.
+        </p>
+        <span class="marine-rank">Former Admiral</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">🔥</div>
+        <h3>Sakazuki (Akainu)</h3>
+        <p>
+          The current Fleet Admiral, known for his absolute approach to
+          Marine justice.
+        </p>
+        <span class="marine-rank">Fleet Admiral</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">💡</div>
+        <h3>Borsalino (Kizaru)</h3>
+        <p>
+          A Marine Admiral who possesses incredible speed and light-based
+          abilities.
+        </p>
+        <span class="marine-rank">Admiral</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">🌸</div>
+        <h3>Issho (Fujitora)</h3>
+        <p>
+          An Admiral capable of manipulating gravity and summoning devastating
+          attacks from above.
+        </p>
+        <span class="marine-rank">Admiral</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">🐉</div>
+        <h3>Monkey D. Garp</h3>
+        <p>
+          The legendary Marine hero and grandfather of Luffy, famous for his
+          incredible strength.
+        </p>
+        <span class="marine-rank">Vice Admiral</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">💨</div>
+        <h3>Smoker</h3>
+        <p>
+          A determined Marine officer who has repeatedly crossed paths with
+          the Straw Hat Pirates.
+        </p>
+        <span class="marine-rank">Vice Admiral</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">⚔️</div>
+        <h3>Tashigi</h3>
+        <p>
+          A Marine swordswoman dedicated to taking dangerous blades away from
+          criminals.
+        </p>
+        <span class="marine-rank">Captain</span>
+      </div>
+
+      <div class="card marine-card">
+        <div class="marine-symbol">👊</div>
+        <h3>Koby</h3>
+        <p>
+          A young Marine who has grown from a timid cabin boy into a capable
+          and determined officer.
+        </p>
+        <span class="marine-rank">Captain</span>
+      </div>
+
+    </div>
+  </section>
+  <!-- POWERFUL FOES -->
+<section id="foes" class="foes-section">
+
+  <h2>☠️ OTHER POWERFUL PEOPLE ☠️</h2>
+
+  <p class="foes-intro">
+    The seas of One Piece are filled with terrifying enemies.
+    From legendary pirates and Yonko to ruthless warriors and mysterious
+    powers, these foes stand among the greatest threats in the world.
+  </p>
+
+  <div class="cards">
+
+    <div class="card foe-card">
+      <div class="foe-icon">🐉</div>
+      <h3>Kaido</h3>
+      <p>
+        Known as one of the strongest creatures in the world, Kaido is a
+        legendary pirate with immense strength and a powerful Mythical
+        Zoan Devil Fruit that turns him into a dragon.
+      </p>
+      <span class="foe-title"><b> Yonko</b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">👑</div>
+      <h3>Shanks</h3>
+      <p>
+        One of the Four Emperors of the Sea. Shanks possesses incredibly
+        powerful Haki and is one of the most influential pirates alive.
+      </p>
+      <span class="foe-title"><b>Yonko</b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">🖤</div>
+      <h3>Marshall D. Teach</h3>
+      <p>
+        Also known as Blackbeard, Teach is a dangerous pirate who possesses
+        two Devil Fruits and seeks to become the Pirate King.
+      </p>
+      <span class=foe-title><b>Yonko</b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">🍬</div>
+      <h3>Charlotte Linlin</h3>
+      <p>
+        Big Mom was one of the most powerful pirates in the world, ruling
+        over a massive territory with her enormous family and crew.
+      </p>
+      <span class="foe-title"><b> Yonko </b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">🦅</div>
+      <h3>Dracule Mihawk</h3>
+      <p>
+        Known as the world's strongest swordsman, Mihawk is a master swordsman
+        whose skill rivals even the most powerful pirates. He is said to be an equal to Shanks.
+      </p>
+      <span class="foe-title"><b>World's Strongest Swordsman</b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">😈</div>
+      <h3>Nerona Imu</h3>
+      <p>
+        The leader of the World Government. Has the youth Devil Fruit, which 
+        means that she can never grow old. Practically immortal.
+      </p>
+      <span class="foe-title"><b>Leader of the World Government</b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">⛈️</div>
+      <h3>Dragon</h3>
+      <p>
+        The leader of the Revolutionary Army, Garp's son and Luffy's dad, we don't know much about Dragon. But what we do know is that he most likely posseses a Mythical Zoan Devil Fruit that can control weather. 
+      </p>
+      <span class="foe-title"><b>Leader of the Revolutionary Army</b></span>
+    </div>
+
+    <div class="card foe-card">
+      <div class="foe-icon">🎭</div>
+      <h3>Rob Lucci</h3>
+      <p>
+        An elite World Government assassin and one of the most dangerous
+        opponents the Straw Hats have faced.
+      </p>
+      <span class="foe-title"><b>CP0</b></span>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
