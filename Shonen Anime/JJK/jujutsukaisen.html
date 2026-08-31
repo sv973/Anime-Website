@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jujutsu Kaisen | Anime Archive</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08070d;
+    color: #f4f1f7;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 20;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 31px;
+    letter-spacing: 4px;
+}
+
+.logo span {
+    color: #a855f7;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid #4b4655;
+    padding: 11px 18px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.back-button:hover {
+    background: #a855f7;
+    border-color: #a855f7;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 900px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(168, 85, 247, .28),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(239, 68, 68, .16),
+            transparent 25%
+        ),
+        linear-gradient(
+            125deg,
+            #05050a,
+            #100b19 55%,
+            #160c15
+        );
+}
+
+/* Cursed energy circle */
+
+.cursed-energy {
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -100px;
+    top: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(192, 132, 252, .55),
+            rgba(126, 34, 206, .2) 35%,
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    animation: energyPulse 4s infinite alternate;
+}
+
+@keyframes energyPulse {
+    from {
+        transform: scale(.9);
+        opacity: .65;
+    }
+
+    to {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+/* Purple rings */
+
+.ring {
+    position: absolute;
+
+    border: 1px solid rgba(168,85,247,.25);
+
+    border-radius: 50%;
+
+    animation: rotateRing 15s linear infinite;
+}
+
+.ring-one {
+    width: 500px;
+    height: 500px;
+
+    right: 10%;
+    top: 220px;
+}
+
+.ring-two {
+    width: 720px;
+    height: 720px;
+
+    right: -5%;
+    top: 110px;
+
+    animation-direction: reverse;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating cursed energy */
+
+.particle {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: #c084fc;
+
+    box-shadow:
+        0 0 12px #a855f7,
+        0 0 25px #7e22ce;
+
+    border-radius: 50%;
+
+    animation: floatParticle 5s infinite ease-in-out;
+}
+
+.p1 {
+    right: 28%;
+    top: 25%;
+}
+
+.p2 {
+    right: 43%;
+    top: 65%;
+    animation-delay: 1s;
+}
+
+.p3 {
+    right: 15%;
+    top: 70%;
+    animation-delay: 2s;
+}
+
+.p4 {
+    right: 52%;
+    top: 30%;
+    animation-delay: 3s;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: .3;
+    }
+
+    50% {
+        transform: translateY(-35px);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    width: min(1200px, 86%);
+    margin: auto;
+
+    position: relative;
+    z-index: 5;
+}
+
+.hero-label {
+    color: #c084fc;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 6px;
+}
+
+.hero h1 {
+    margin-top: 18px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(90px, 15vw, 210px);
+
+    line-height: .76;
+
+    letter-spacing: 3px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px #a855f7;
+
+    margin-left: 90px;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    margin-top: 45px;
+
+    color: #a8a2b0;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+.hero-buttons a {
+    padding: 14px 23px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.primary {
+    background: #7e22ce;
+    color: white;
+
+    box-shadow:
+        0 0 25px rgba(126,34,206,.25);
+}
+
+.primary:hover {
+    background: #9333ea;
+    transform: translateY(-3px);
+}
+
+.secondary {
+    color: white;
+
+    border: 1px solid #514958;
+}
+
+.secondary:hover {
+    border-color: #a855f7;
+    color: #c084fc;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(1200px, 86%);
+    margin: auto;
+
+    padding: 110px 0;
+}
+
+.section-label {
+    color: #a855f7;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 70px;
+
+    line-height: .9;
+
+    letter-spacing: 2px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.story-number {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 230px;
+
+    color: #100e16;
+
+    -webkit-text-stroke: 1px #282330;
+}
+
+.story-content {
+    border-left: 2px solid #7e22ce;
+
+    padding-left: 35px;
+}
+
+.story-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 65px;
+
+    line-height: .9;
+}
+
+.story-content h2 span {
+    color: #a855f7;
+}
+
+.story-content p {
+    margin-top: 25px;
+
+    color: #89838f;
+
+    line-height: 1.9;
+}
+
+/* =========================
+   CURSED TECHNIQUES
+========================= */
+
+.techniques {
+    margin-top: 140px;
+}
+
+.technique-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 45px;
+}
+
+.technique-header p {
+    max-width: 350px;
+
+    color: #68626f;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    text-align: right;
+}
+
+.technique-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.technique {
+    min-height: 330px;
+
+    position: relative;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #15101e,
+            #0b0910
+        );
+
+    border: 1px solid #29222f;
+
+    transition: .35s;
+}
+
+.technique::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    right: -70px;
+    top: -70px;
+
+    background: #7e22ce;
+
+    opacity: .12;
+
+    filter: blur(10px);
+}
+
+.technique:hover {
+    transform: translateY(-8px);
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.5),
+        0 0 30px rgba(168,85,247,.1);
+}
+
+.technique-number {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 65px;
+
+    color: #292230;
+}
+
+.technique h3 {
+    margin-top: 85px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 35px;
+
+    letter-spacing: 2px;
+}
+
+.technique p {
+    margin-top: 10px;
+
+    color: #77717f;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   CHARACTERS
+========================= */
+
+.characters {
+    margin-top: 140px;
+}
+
+.character-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.character {
+    min-height: 360px;
+
+    position: relative;
+
+    padding: 25px;
+
+    background: #0d0b11;
+
+    border: 1px solid #24202a;
+
+    overflow: hidden;
+
+    transition: .35s;
+}
+
+.character:hover {
+    transform: translateY(-8px);
+
+    border-color: #a855f7;
+}
+
+.character::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 3px;
+
+    background: #a855f7;
+
+    transition: .4s;
+}
+
+.character:hover::after {
+    left: 0;
+}
+
+.character-number {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 65px;
+
+    color: #18141e;
+}
+
+.character h3 {
+    margin-top: 125px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+}
+
+.character .role {
+    margin-top: 6px;
+
+    color: #a855f7;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.character p {
+    margin-top: 12px;
+
+    color: #706a77;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   DOMAIN EXPANSION
+========================= */
+
+.domain {
+    margin-top: 140px;
+
+    padding: 80px 60px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(168,85,247,.3),
+            transparent 30%
+        ),
+        #0d0a12;
+
+    border: 1px solid #30283a;
+}
+
+.domain::before {
+    content: "領域展開";
+
+    position: absolute;
+
+    right: -20px;
+    top: -55px;
+
+    font-size: 210px;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,.025);
+}
+
+.domain h2 {
+    position: relative;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 85px;
+
+    line-height: .8;
+}
+
+.domain h2 span {
+    color: #a855f7;
+}
+
+.domain p {
+    position: relative;
+
+    max-width: 620px;
+
+    margin-top: 25px;
+
+    color: #85808b;
+
+    line-height: 1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px;
+
+    text-align: center;
+
+    background: #030305;
+
+    border-top: 1px solid #201c25;
+
+    color: #514c57;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .story-number {
+        display: none;
+    }
+
+    .technique-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 span {
+        margin-left: 20px;
+    }
+
+    .ring {
+        opacity: .4;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+    }
+
+    .hero h1 span {
+        margin-left: 0;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technique-header {
+        display: block;
+    }
+
+    .technique-header p {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .domain {
+        padding: 50px 30px;
+    }
+
+    .domain h2 {
+        font-size: 60px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        ANIME <span>ARCHIVE</span>
+    </div>
+
+    <a
+        href="../../index.html"
+        class="back-button">
+        ← BACK TO ANIME
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="cursed-energy"></div>
+
+    <div class="ring ring-one"></div>
+    <div class="ring ring-two"></div>
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            CURSED ENERGY // JUJUTSU SORCERER
+        </div>
+
+        <h1>
+            JUJUTSU
+            <span>KAISEN</span>
+        </h1>
+
+        <p class="hero-description">
+            In a world where cursed spirits are born from human
+            negativity, Jujutsu Sorcerers fight to protect humanity
+            from supernatural threats hiding in the shadows.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#characters"
+                class="primary">
+                MEET THE SORCERERS
+            </a>
+
+            <a
+                href="#techniques"
+                class="secondary">
+                CURSED TECHNIQUES
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+    <!-- STORY -->
+
+    <section class="story">
+
+        <div class="story-number">
+            01
+        </div>
+
+
+        <div class="story-content">
+
+            <div class="section-label">
+                THE WORLD OF JUJUTSU
+            </div>
+
+            <h2>
+                CURSES ARE<br>
+                <span>EVERYWHERE</span>
+            </h2>
+
+            <p>
+                Yuji Itadori is pulled into the hidden world of
+                Jujutsu Sorcery after encountering a cursed object.
+                His journey brings him face-to-face with powerful
+                curses, dangerous techniques, and sorcerers who
+                risk their lives to protect ordinary people.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CURSED TECHNIQUES -->
+
+    <section
+        class="techniques"
+        id="techniques">
+
+        <div class="technique-header">
+
+            <div>
+
+                <div class="section-label">
+                    CURSED ENERGY DATABASE
+                </div>
+
+                <h2 class="section-title">
+                    CURSED<br>
+                    TECHNIQUES
+                </h2>
+
+            </div>
+
+            <p>
+                Powerful abilities created through the manipulation
+                of cursed energy. Every technique has its own rules,
+                strengths, and weaknesses.
+            </p>
+
+        </div>
+
+
+        <div class="technique-grid">
+
+
+            <div class="technique">
+
+                <div class="technique-number">
+                    01
+                </div>
+
+                <h3>LIMITLESS</h3>
+
+                <p>
+                    The inherited technique of the Gojo family,
+                    allowing its user to manipulate space.
+                </p>
+
+            </div>
+
+
+            <div class="technique">
+
+                <div class="technique-number">
+                    02
+                </div>
+
+                <h3>10 SHADOWS</h3>
+
+                <p>
+                    A powerful inherited technique that allows
+                    its user to summon and control shikigami.
+                </p>
+
+            </div>
+
+
+            <div class="technique">
+
+                <div class="technique-number">
+                    03
+                </div>
+
+                <h3>BOOGIE WOOGIE</h3>
+
+                <p>
+                    A unique technique that allows its user
+                    to manipulate the positions of targets.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTERS -->
+
+    <section
+        class="characters"
+        id="characters">
+
+        <div class="section-label">
+            JUJUTSU HIGH DATABASE
+        </div>
+
+        <h2 class="section-title">
+            SORCERERS
+        </h2>
+
+
+        <div class="character-grid">
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    01
+                </div>
+
+                <h3>YUJI ITADORI</h3>
+
+                <div class="role">
+                    JUJUTSU SORCERER
+                </div>
+
+                <p>
+                    A physically gifted student who becomes
+                    connected to the powerful curse Sukuna.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    02
+                </div>
+
+                <h3>SATORU GOJO</h3>
+
+                <div class="role">
+                    SPECIAL GRADE SORCERER
+                </div>
+
+                <p>
+                    A legendary sorcerer known for his immense
+                    cursed energy and the Six Eyes.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    03
+                </div>
+
+                <h3>MEGUMI FUSHIGURO</h3>
+
+                <div class="role">
+                    JUJUTSU SORCERER
+                </div>
+
+                <p>
+                    A talented sorcerer who uses the Ten Shadows
+                    Technique to summon powerful shikigami.
+                </p>
+
+            </div>
+
+
+            <div class="character">
+
+                <div class="character-number">
+                    04
+                </div>
+
+                <h3>NOBARA KUGISAKI</h3>
+
+                <div class="role">
+                    JUJUTSU SORCERER
+                </div>
+
+                <p>
+                    A confident sorcerer who fights using
+                    cursed tools, nails, and her Straw Doll Technique.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- DOMAIN -->
+
+    <section class="domain">
+
+        <div class="section-label">
+            ULTIMATE TECHNIQUE
+        </div>
+
+        <h2>
+            DOMAIN<br>
+            <span>EXPANSION</span>
+        </h2>
+
+        <p>
+            A Domain Expansion creates a specialized space where
+            a sorcerer's cursed technique reaches an extreme level
+            of power. Only the strongest users can master this ability.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    JUJUTSU KAISEN // ANIME ARCHIVE
+
+</footer>
+
+</body>
+</html>
